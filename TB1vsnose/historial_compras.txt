@@ -1,0 +1,185 @@
+Cliente: matjavi
+id: 1410
+Monto Total: 17.97
+Monto a pagar: 15.2745
+Productos comprados:
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0002 | Costo: 2.55
+A0002 | Costo: 2.55
+A0003 | Costo: 1.6915
+-----------------------------
+Cliente: martin
+id: 1010
+Monto Total: 14.97
+Monto a pagar: 12.7245
+Productos comprados:
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+-----------------------------
+Cliente: hola
+id: 123
+Monto Total: 0
+Monto a pagar: 0
+Productos comprados:
+-----------------------------
+Cliente: hola
+id: 123
+Monto Total: 0
+Monto a pagar: 0
+Productos comprados:
+-----------------------------
+Cliente: holz
+id: 123
+Monto Total: 0
+Monto a pagar: 0
+Productos comprados:
+-----------------------------
+Cliente: 1213
+id: 122
+Monto Total: 12
+Monto a pagar: 10.2
+Productos comprados:
+A0002 | Costo: 2.55
+A0002 | Costo: 2.55
+A0002 | Costo: 2.55
+A0002 | Costo: 2.55
+-----------------------------
+Cliente: matias
+id: 1410
+Monto Total: 44.91
+Monto a pagar: 41.1675
+Productos comprados:
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+-----------------------------
+Cliente: nuevo
+id: 141000
+Monto Total: 34.93
+Monto a pagar: 31.1875
+Productos comprados:
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+-----------------------------
+Cliente: waza
+id: 1000
+Monto Total: 19.96
+Monto a pagar: 16.966
+Productos comprados:
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0002 | Costo: 2.55
+A0003 | Costo: 1.6915
+-----------------------------
+Cliente: 1444
+id: 1444
+Monto Total: 34.93
+Monto a pagar: 34.93
+Productos comprados:
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+-----------------------------
+Cliente: jiji
+id: 40
+Monto Total: 39.92
+Monto a pagar: 24.95
+Productos comprados:
+A0001 | Costo: 0
+A0001 | Costo: 0
+A0001 | Costo: 0
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+A0001 | Costo: 4.99
+-----------------------------
+Cliente: wazaloverInsano
+id: 9090
+Monto Total: 24.95
+Monto a pagar: 21.8045
+Productos comprados:
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0002 | Costo: 2.55
+A0002 | Costo: 2.55
+A0003 | Costo: 1.99
+A0003 | Costo: 1.99
+-----------------------------
+Cliente: pepinillo
+id: 114
+Monto Total: 22.96
+Monto a pagar: 20.113
+Productos comprados:
+A0001 | Costo: 4.2415
+A0001 | Costo: 4.2415
+A0002 | Costo: 2.55
+A0002 | Costo: 2.55
+A0002 | Costo: 2.55
+A0003 | Costo: 1.99
+A0003 | Costo: 1.99
+-----------------------------
+Cliente: matiasyCielo
+id: 0000
+Monto Total: 21
+Monto a pagar: 12
+Productos comprados:
+A0002 | Costo: 0
+A0002 | Costo: 0
+A0002 | Costo: 0
+A0002 | Costo: 3
+A0002 | Costo: 3
+A0002 | Costo: 3
+A0002 | Costo: 3
+-----------------------------
+Cliente: matjavi
+id: 1212
+Monto Total: 4.99
+Monto a pagar: 4.2415
+Productos comprados:
+A0001 | Costo: 4.2415
+-----------------------------
+Cliente: pedro
+id: 464
+Monto Total: 23.97
+Monto a pagar: 20.3745
+Productos comprados:
+A0005 | Costo: 12.75
+A0001 | Costo: 4.2415
+A0003 | Costo: 1.6915
+A0003 | Costo: 1.6915
+-----------------------------
+Cliente: vanessa
+id: 202416
+Monto Total: 9.98
+Monto a pagar: 8.483
+Productos comprados:
+A0001 | Costo: 4.2415
+A0002 | Costo: 2.55
+A0003 | Costo: 1.6915
+-----------------------------
+Cliente: javier
+id: 1000
+Monto Total: 9
+Monto a pagar: 7.65
+Productos comprados:
+A0002 | Costo: 2.55
