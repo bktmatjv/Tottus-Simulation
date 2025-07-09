@@ -534,6 +534,17 @@ void AgregarEnCarrito(Interfaz* F, vector<Pila<Nodo<Producto<double>>>*>& pilas)
 		VerLista(c);
 
 	}
+	void mostrar_info_INT(Color* c, Interfaz* d) {
+		d->Imprimir(55, 5, c, "Bienvenido, que accion desea realizar?");
+
+		d->Imprimir(70, 7, c, "Usuario en cola virtual (atender pedido): " + nombre);
+
+		d->Imprimir(55, 9, c, "Nombre: " + nombre);
+		d->Imprimir(55, 10, c, "Codigo: " + tipo);
+		d->Imprimir(55, 11, c, "Cupon: " + (cupon)? "Si" : "No");
+	}
+
+
 	void VerLista(Color* c) {
 		designer->interfazCarritoCliente();
 		carrito->Ver(c);

@@ -76,9 +76,9 @@ public:
     void mostrarINFO_de_Grafo() {
         string t = "La distancia minima para ir desde tu ubicación hasta el Tottus más cercano es " + to_string(currentCost);
         Color* c = new Color(0, 2);
-        m->Imprimir(40, 10,c, t);
-        cursor(40, 11); cout << "Las esquinas a la que tiene que ir el delivery son:";
-        cursor(40, 12);
+        m->Imprimir(20, 10,c, t);
+        cursor(20, 11); cout << "Las esquinas a la que tiene que ir el delivery son:";
+        cursor(20, 12);
         for (auto e : way) {
             cout << e << " ->";
         }
@@ -165,38 +165,38 @@ public:
 
         // Aristas definidas del grafo
         agregarArista('A', 'H', 250);
-        agregarArista('A', 'B', 700);
-        agregarArista('B', 'C', 300);
-        agregarArista('B', 'F', 400);
+        agregarArista('A', 'B', 400);
+        agregarArista('B', 'C', 250);
+        agregarArista('B', 'F', 250);
         agregarArista('C', 'D', 200);
         agregarArista('D', 'E', 150);
         agregarArista('E', 'F', 500);
-        agregarArista('E', 'L', 600);
-        agregarArista('F', 'G', 150);
-        agregarArista('F', 'T', 600);
+        agregarArista('E', 'L', 500);
+        agregarArista('F', 'G', 250);
+        agregarArista('F', 'T', 500);
         agregarArista('G', 'H', 100);
-        agregarArista('H', 'I', 100);
-        agregarArista('I', 'J', 300);
-        agregarArista('J', 'T', 100);
+        agregarArista('H', 'I', 500);
+        agregarArista('I', 'J', 50);
+        agregarArista('J', 'T', 350);
         agregarArista('T', 'K', 75);
         agregarArista('K', 'L', 75);
-        agregarArista('L', 'M', 100);
-        agregarArista('M', 'N', 280);
+        agregarArista('L', 'M', 75);
+        agregarArista('M', 'N', 500);
         agregarArista('N', 'E', 170);
-        agregarArista('I', 'S', 490);
+        agregarArista('I', 'S', 250);
         agregarArista('S', 'R', 350);
         agregarArista('R', 'U', 200);
         agregarArista('R', 'Q', 350);
-        agregarArista('Q', 'T', 400);
+        agregarArista('Q', 'T', 250);
         agregarArista('Q', 'P', 110);
         agregarArista('P', 'V', 100);
         agregarArista('Q', 'V', 200);
         agregarArista('V', 'U', 350);
         agregarArista('V', 'X', 100);
-        agregarArista('U', 'O', 400);
-        agregarArista('O', 'W', 100);
-        agregarArista('W', 'X', 1000);
-        agregarArista('X', 'Y', 500);
+        agregarArista('U', 'O', 100);
+        agregarArista('O', 'W', 250);
+        agregarArista('W', 'X', 450);
+        agregarArista('X', 'Y', 150);
         agregarArista('P', 'Y', 250);
 
         for (size_t i = 0; i < 31; i++)
@@ -274,14 +274,15 @@ public:
         bool si = false;
         if (source > dest) si = true;
 
+
+
+        //if (si) reverse(vec.way.begin(), vec.way.end());
+
         int s = (source);
         int y = posiciones[s].second;
         int x = posiciones[s].first;
 
 
-        if (si) {
-            reverse(vec.way.begin(), vec.way.end());
-        }
         for (int i = 1; i < vec.way.size(); i++) {
 
 
@@ -291,23 +292,44 @@ public:
 
             if (source > dest) {
                 while (x != x2) {
-                    x += (x2 > x) ? 1 : -1;
+                    
+                    if (x2 > x) x++;
+                    else if (x2 < x) x--;
 
 
-                    if (camino[x][y] == '-') cursor(y, x); m->ListaDePaletaDeColores(30);
+
+                    if (camino[x][y - 1] == '-') {
+                        cursor(y - 1, x); m->ListaDePaletaDeColores(30);
+                    }
+                    if (camino[x][y] == '-') {
+                        cursor(y, x); m->ListaDePaletaDeColores(30);
+                    }if (camino[x][y + 1] == '-') {
+                        cursor(y + 1, x); m->ListaDePaletaDeColores(30);
+                    }
 
 
                     _sleep(50);
                 }
 
                 while (y != y2) {
-                    y += (y2 > y) ? 1 : -1;
+     
+
+                    if (y2 > y) y++;
+                    else if (y2 < y) y--;
 
                     //cursor(30+y, 30+x); cout << mapa[x][y];
 
 
-                    if (camino[x][y] == '-') cursor(y, x); m->ListaDePaletaDeColores(30);
-
+                    if (camino[x - 1][y] == '-') {
+                        cursor(y, x - 1); m->ListaDePaletaDeColores(30);
+                    }
+                    if (camino[x][y] == '-') {
+                        cursor(y, x); m->ListaDePaletaDeColores(30);
+                    }
+                    if (camino[x + 1][y] == '-') {
+                        cursor(y, x + 1);
+                        m->ListaDePaletaDeColores(30);
+                    }
 
                     _sleep(50);
                 }
@@ -316,20 +338,39 @@ public:
             }
             else {
                 while (y != y2) {
-                    y += (y2 > y) ? 1 : -1;
 
-                    //cursor(30+y, 30+x); cout << mapa[x][y];
+                    if (y2 > y) y++;
+                    else if (y2 < y) y--;
 
-                    if (camino[x][y] == '-') cursor(y, x); m->ListaDePaletaDeColores(30);
 
+                    if (camino[x - 1][y] == '-') {
+                        cursor(y, x - 1); m->ListaDePaletaDeColores(30);
+                    }
+                    if (camino[x][y] == '-') {
+                        cursor(y, x); m->ListaDePaletaDeColores(30);
+                    }
+                    if (camino[x + 1][y] == '-') {
+                        cursor(y, x + 1);
+                        m->ListaDePaletaDeColores(30);
+                    }
 
                     _sleep(50);
                 }
 
                 while (x != x2) {
-                    x += (x2 > x) ? 1 : -1;
+                    
+                    if (x2 > x) x++;
+                    else if (x2 < x) x--;
 
-                    if (camino[x][y] == '-') cursor(y, x); m->ListaDePaletaDeColores(30);
+                    
+                    if (camino[x][y - 1] == '-') {
+                        cursor(y - 1, x); m->ListaDePaletaDeColores(30);
+                    }
+                    if (camino[x][y] == '-') {
+                        cursor(y, x); m->ListaDePaletaDeColores(30);
+                    }if (camino[x][y + 1] == '-') {
+                        cursor(y + 1, x); m->ListaDePaletaDeColores(30);
+                    }
 
 
                     _sleep(50);
@@ -340,8 +381,6 @@ public:
         }
 
     }
-
-
 
     void dibCam() {
 
@@ -371,23 +410,28 @@ public:
 
     camVec tiendaMasCercana(char source) {
 
-        char mini = 'T';
-        camVec dT = dijkstra(source, 'T');
-        camVec dA = dijkstra(source, 'A');
-        camVec dW = dijkstra(source, 'W');
+        //Sea V, la cantidad de vertices de nuestro grafo : 25
+        //Sea E la cantidad de aristas de nuestro grafo : 34
 
-        camVec resultante = dT;
+        char mini = 'T'; // 2
+        camVec dT = dijkstra(source, 'T'); // 2 + 25 + 34 log 25 : 27+34×4.64 : 183
+        camVec dA = dijkstra(source, 'A'); // 2 + 25 + 34 log 25 : 27+34×4.64 : 183
+        camVec dW = dijkstra(source, 'W'); // 2 + 25 + 34 log 25 : 27+34×4.64 : 183
 
-        if (resultante.currentCost > dA.currentCost) {
-            resultante = dA;
-            mini = 'A';
+        camVec resultante = dT; // 2
+
+        if (resultante.currentCost > dA.currentCost) { // 3
+            resultante = dA; // 1
+            mini = 'A'; // 1
         }
-        if (resultante.currentCost > dW.currentCost) {
-            resultante = dW;
-            mini = 'W';
+        if (resultante.currentCost > dW.currentCost) { // 3
+            resultante = dW; // 1
+            mini = 'W'; // 1
         }
 
-        dibujarCamino(resultante, source, mini);
+        dibujarCamino(resultante, source, mini); // O( N + M ) :  dependiendo del grafo
+
+        // 183 * 3 + 2 + 5 + 5 + N + M = 561 + N + M -> O(N+M)
 
         return resultante;
     }
