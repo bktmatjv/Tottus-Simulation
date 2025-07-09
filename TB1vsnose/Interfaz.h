@@ -2708,7 +2708,7 @@ public:
                 cout << colores->BG_negro << " " << colores->RESET;
             }
             if (mapa[i][j] == 10) {
-                cout << colores->BG_blanco << " " << colores->RESET;
+                cout << colores->BG_verdeMUYscuro << " " << colores->RESET;
             }
             if (mapa[i][j] == 11) {
                 cout << colores->BG_grisclaro << " " << colores->RESET;
@@ -2814,7 +2814,7 @@ public:
                 cout << colores->BG_negro << " " << colores->RESET;
             }
             if (mapa[i][j] == 10) {
-                cout << colores->BG_blanco << " " << colores->RESET;
+                cout << colores->BG_verdeMUYscuro << " " << colores->RESET;
             }
             if (mapa[i][j] == 11) {
                 cout << colores->BG_grisclaro << " " << colores->RESET;
@@ -2929,7 +2929,7 @@ public:
                 cout << colores->BG_negro << " " << colores->RESET;
             }
             if (mapa[i][j] == 10) {
-                cout << colores->BG_blanco << " " << colores->RESET;
+                cout << colores->BG_verdeMUYscuro << " " << colores->RESET;
             }
             if (mapa[i][j] == 11) {
                 cout << colores->BG_grisclaro << " " << colores->RESET;
@@ -3037,7 +3037,7 @@ public:
                 cout << colores->BG_negro << " " << colores->RESET;
             }
             if (mapa[i][j] == 10) {
-                cout << colores->BG_blanco << " " << colores->RESET;
+                cout << colores->BG_verdeMUYscuro << " " << colores->RESET;
             }
             if (mapa[i][j] == 11) {
                 cout << colores->BG_grisclaro << " " << colores->RESET;

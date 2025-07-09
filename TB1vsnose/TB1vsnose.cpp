@@ -138,59 +138,52 @@ int main()
                     if (caja->actual->carrito->cantidadLista > 0)ADMIN->guardarCompraEnHistorial(caja, caja->actual->carrito, caja->actual->retornarMonto(), caja->actual->montoTotalAPagar);
                     ADMIN->generarBoletaElectronica(designer);
                 }
+                system("pause>0");
             }
-
-
             if (opcion == 3) {
 
-                int n = ADMIN->CajaVirtual->getN();
-
-                designer->menuAtenderCaja();
-                designer->Imprimir(20, 15, new Color(0, 2), "[1] Volver");
-                designer->Imprimir(20, 20, new Color(0, 2), "[2] Ver mapa ");
-                designer->Imprimir(20, 23, new Color(0, 2), "[3] Pagar Delivery");
-
-
-
-                int x = 35, y = 16;
-                int option; cin >> option;
+                int option;
                 Nodo<Cliente<string>>* caja = ADMIN->CajaVirtual->EliminarElemento();
-
-                if (caja->actual == nullptr) {
-                    designer->Imprimir(70, 10, new Color(0, 2), "No hay clientes disponibles.");
-
-                }
-                else {
-                    cursor(70, 10);
-                    caja->actual->mostrar_info(new Color(0, 2));
-                }
 
                 do {
 
+                    int n = ADMIN->CajaVirtual->getN();
+
+                    designer->menuAtenderCaja();
+                    designer->Imprimir(20, 15, new Color(0, 2), "[1] Volver");
+                    designer->Imprimir(20, 19, new Color(0, 2), "[2] Ver mapa ");
+                    designer->Imprimir(20, 23, new Color(0, 2), "[3] Pagar Delivery");
+                    int x = 35, y = 16;
+
+                   
+                    if (caja == nullptr || caja->actual == nullptr) {
+                        designer->Imprimir(70, 10, new Color(0, 5), "No hay clientes disponibles.");
+                    }
+                    else {
+                        cursor(70, 10);
+                        caja->actual->mostrar_info_INT(new Color(0, 5), new Interfaz);
+                    }
+
+                    designer->Imprimir(10, 27, new Color(0, 2), "Seleccione una opción: ");
+
+                    cin >> option;
 
                     if (option == 2) {
-                        
                         system("cls");
                         designer->mapa_Tottus();
+                        mapita->dibujarLetras();
 
-                        if (caja->actual == nullptr) {
+
+                        if (caja == nullptr || caja->actual == nullptr) {
                             designer->Imprimir(40, 20, new Color(0, 2), "No hay clientes disponibles.");
                         }
                         else {
                             mapita->dibujarCamino(*caja->actual->ruta, caja->actual->nodIn, caja->actual->NodFin);
                             system("pause>0");
                             system("cls");
-
-
                             caja->actual->ruta->mostrarINFO_de_Grafo();
-
                         }
-
                         system("pause>0");
-
-
-
-
                     }
                     if (option == 3) {
 
@@ -198,26 +191,20 @@ int main()
                             caja->actual->PagarCarrito(ADMIN->valIngresosBrutos(), ADMIN->valIngresosNetos(), ADMIN->valdescuentoTotalProducido());
                             if (caja->actual->carrito->cantidadLista > 0)ADMIN->guardarCompraEnHistorial(caja, caja->actual->carrito, caja->actual->retornarMonto(), caja->actual->montoTotalAPagar);
                             ADMIN->generarBoletaElectronica(designer);
+
+                            caja = ADMIN->CajaVirtual->EliminarElemento();
+
+                        }
+                        else {
+                            designer->Imprimir(40, 20, new Color(0, 2), "No hay clientes disponibles.");
                         }
 
+                        
                         system("pause>0");
                     }
-                    system("cls");
-                    designer->menuAtenderCaja();
-                    designer->Imprimir(20, 15, new Color(0, 2), "[1] Volver");
-                    designer->Imprimir(20, 20, new Color(0, 2), "[2] Ver mapa ");
-                    designer->Imprimir(20, 23, new Color(0, 2), "[3] Pagar Delivery");
-
-
-                    cin >> option;
                 } while (option != 1);
-
-
-
             }
-
-
-            system("pause>0");
+            
         } while (opcion != 1);
         };
 
@@ -410,6 +397,9 @@ int main()
                     _sleep(700);
                     system("cls");
                     designer->mapa_Tottus();
+                    mapita->dibujarLetras();
+
+
 
                     system("pause>0");
                     system("cls");
@@ -418,6 +408,8 @@ int main()
                     cout << "Ingrese la direccion de su casa (NODO): "; cin >> ini;
 
                     designer->mapa_Tottus();
+                    mapita->dibujarLetras();
+
 
                     camVec* nuev = new camVec(mapita->tiendaMasCercana(ini));
                     nodo->actual->ruta = nuev;
@@ -547,8 +539,17 @@ int main()
                 
 
                 designer->mapa_Tottus();
+                mapita->dibujarLetras();
 
-                mapita->tiendaMasCercana(ini);
+
+                camVec n = mapita->tiendaMasCercana(ini);
+                
+                /*
+                for (auto e : n.way) {
+                    cout << e << " ";
+                }
+                */
+                
 
                 cin >> ini;
             }
